@@ -15,25 +15,6 @@ import categories from '../data/categories'
 export default class Home extends Component {
     render() {
 
-        //Formata as opções da lista horizontal
-        // function getCategories(item){
-        //     return (
-        //         <View>
-        //             <TouchableWithoutFeedback>
-        //                 <View style={styles.imgContainer}>
-        //                     <Image
-        //                         style={styles.tinyLogo}
-        //                         source={{uri: item.urlAvatar}}
-        //                     />
-        //                 </View>
-        //             </TouchableWithoutFeedback>
-        //             <View style={styles.footerList}>
-        //                 <Text style={styles.titleFooterList}>{item.name}</Text>
-        //             </View>
-        //         </View>
-        //     )
-        // }
-
         return (
             <View style={styles.container}>
                 <View style={styles.userContainer}>
@@ -41,8 +22,8 @@ export default class Home extends Component {
 
                     </View>
                     <View style={styles.infoUser}>
-                        <Text>Kristen</Text>
-                        <Text>Florida, US</Text>
+                        <Text style={styles.nameUser}>Kristen</Text>
+                        <Text style={styles.nameUser}>Florida, US</Text>
                     </View>
                 </View>
                 <View style={styles.subTitle}>
@@ -73,7 +54,9 @@ export default class Home extends Component {
                 <View style={styles.awaiting}>
                     <Text style={styles.awaitingHome}>Esperando uma casa</Text>
                 </View>
-                <ListAnimals/>
+                <View style={styles.listAnimals}>
+                    <ListAnimals/>
+                </View>
             </View>
         )
     }
@@ -88,11 +71,14 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     user: {
-        width: 50,
-        height: 50,
+        width: 60,
+        height: 60,
         backgroundColor: 'red',
         borderRadius: 15,
         marginLeft: 15,
+    },
+    nameUser: {
+        color: "#b5b5b5"
     },
     infoUser: {
         marginLeft: 5
@@ -135,6 +121,9 @@ const styles = StyleSheet.create({
         fontSize: 18,
         marginLeft: 15,
         fontWeight: 'bold'
+    },
+    listAnimals: {
+        
     }
 })
 
