@@ -10,12 +10,14 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "@react-native-picker/picker": "^2.4.2",
     "@react-navigation/bottom-tabs": "^6.3.1",
     "@react-navigation/native": "^6.0.10",
     "@rneui/base": "github:react-native-elements/react-native-elements#base",
     "@rneui/themed": "github:react-native-elements/react-native-elements#themed",
     "react": "17.0.2",
     "react-native": "0.68.2",
+    "react-native-picker-select": "^8.0.4",
     "react-native-safe-area-context": "^3.1.19",
     "react-native-screens": "^3.13.1",
     "react-native-screens-swiper": "^1.2.6",

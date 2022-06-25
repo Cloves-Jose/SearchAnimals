@@ -7,18 +7,15 @@ import {
     TouchableWithoutFeedbackBase,
     Image
  } from 'react-native'
-import { ListItem, Avatar } from "@rneui/themed";
 
 import listAnimals from '../data/listAnimals'
 
 export default props => {
     return(
-        <View>
             <FlatList
                 keyExtractor={animal => animal.id.toString()}
                 data={listAnimals}
                 renderItem={({item}) => 
-            <View>
                 <View style={styles.imgContainer}>
                     <View style={styles.informations}>
                         <View>
@@ -38,9 +35,9 @@ export default props => {
                         </View>
                     </View>
                 </View>
-            </View>}
-            />
-        </View>
+            }/>
+        // <View>
+        // </View>
     )
 }
 

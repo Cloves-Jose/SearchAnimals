@@ -10,54 +10,56 @@ import {
 
 import ListAnimals from '../components/ListAnimals'
 
+
+
 import categories from '../data/categories'
 
-export default class Home extends Component {
+
+export default class Home extends Component { 
     render() {
-
         return (
-            <View style={styles.container}>
-                <View style={styles.userContainer}>
-                    <View style={styles.user}>
+            <>
+                <View style={styles.container}>
+                    <View style={styles.userContainer}>
+                        <View style={styles.user}>
 
+                        </View>
+                        <View style={styles.infoUser}>
+                            <Text style={styles.nameUser}>Kristen</Text>
+                            <Text style={styles.nameUser}>Florida, US</Text>
+                        </View>
                     </View>
-                    <View style={styles.infoUser}>
-                        <Text style={styles.nameUser}>Kristen</Text>
-                        <Text style={styles.nameUser}>Florida, US</Text>
+                    <View style={styles.subTitle}>
+                        <Text style={styles.textSubtitle}>Escolha seu pet favorito</Text>
+                    </View>
+                    <View>
+                        <FlatList
+                            data={[...categories]}
+                            keyExtractor={item => item.id.toString()}
+                            horizontal={true}
+                            showsHorizontalScrollIndicator={false}
+                            renderItem={({item}) => 
+                            <View>
+                                <TouchableWithoutFeedback>
+                                    <View style={styles.imgContainer}>
+                                        <Image
+                                            style={styles.tinyLogo}
+                                            source={{uri: item.urlAvatar}}
+                                        />
+                                    </View> 
+                                </TouchableWithoutFeedback>
+                                    <View style={styles.footerList}>
+                                        <Text style={styles.titleFooterList}>{item.name}</Text>
+                                    </View>   
+                            </View>}
+                        />
+                    </View>
+                    <View style={styles.awaiting}>
+                        <Text style={styles.awaitingHome}>Esperando uma casa</Text>
                     </View>
                 </View>
-                <View style={styles.subTitle}>
-                    <Text style={styles.textSubtitle}>Escolha seu pet favorito</Text>
-                </View>
-                <View>
-                    <FlatList
-                        data={[...categories]}
-                        keyExtractor={item => item.id.toString()}
-                        horizontal={true}
-                        showsHorizontalScrollIndicator={false}
-                        renderItem={({item}) => 
-                        <View>
-                            <TouchableWithoutFeedback>
-                                <View style={styles.imgContainer}>
-                                    <Image
-                                        style={styles.tinyLogo}
-                                        source={{uri: item.urlAvatar}}
-                                    />
-                                </View> 
-                            </TouchableWithoutFeedback>
-                                <View style={styles.footerList}>
-                                    <Text style={styles.titleFooterList}>{item.name}</Text>
-                                </View>   
-                        </View>}
-                    />
-                </View>
-                <View style={styles.awaiting}>
-                    <Text style={styles.awaitingHome}>Esperando uma casa</Text>
-                </View>
-                <View style={styles.listAnimals}>
-                    <ListAnimals/>
-                </View>
-            </View>
+                <ListAnimals/>
+            </>
         )
     }
 }
@@ -123,7 +125,6 @@ const styles = StyleSheet.create({
         fontWeight: 'bold'
     },
     listAnimals: {
-        
     }
 })
 
